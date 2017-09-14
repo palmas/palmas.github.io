@@ -1,0 +1,63 @@
+{
+  "order": [
+    "order",
+    "lname",
+    "name",
+    "position",
+    "interview",
+    "photo"
+  ],
+  "reference": "guests",
+  "title": "Гости конференции",
+  "type": "files",
+  "headers": {
+    "order": {
+      "title": "Порядок",
+      "type": "text",
+      "mandatory": false
+    },
+    "lname": {
+      "title": "Фамилия",
+      "type": "text",
+      "mandatory": false
+    },
+    "name": {
+      "title": "Имя",
+      "type": "text",
+      "mandatory": false
+    },
+    "position": {
+      "title": "Должность",
+      "type": "text",
+      "mandatory": false
+    },
+    "interview": {
+      "title": "Текст интервью",
+      "type": "html",
+      "mandatory": false
+    },
+    "photo": {
+      "title": "Фото",
+      "type": "file",
+      "mandatory": false
+    }
+  },
+  "values": {
+    "36eca269-0bb9-44f8-b98e-477f4bcf878b": {
+      "order": "10",
+      "name": "Guest",
+      "lname": "Guestman",
+      "position": "A very clever man",
+      "interview": "<p><strong>Lorem ipsum</strong></p>\n<p>Ut a efficitur ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec elementum neque aliquam eros pretium, a venenatis mauris facilisis. Quisque quis ornare nulla, non imperdiet augue. Nullam ac tortor non tortor laoreet varius a at purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ac nulla diam. Vestibulum imperdiet quis mauris a malesuada. Donec viverra urna sed lorem molestie commodo quis sed tellus. Nullam sit amet ipsum feugiat, imperdiet risus sed, vulputate arcu. In vel suscipit nisl. Aenean faucibus semper tellus sed molestie. Nullam vel tempor leo, in vehicula nulla. Mauris dictum nisl posuere sagittis lacinia. Quisque hendrerit turpis eu lorem pretium, vitae egestas enim tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sim massa ultrices dictum. Nulla eget efficitur ipsum, in aliquet orci. Nam bibendum egestas nibh, non semper lorem commodo ut. Duis aliquet purus at tortor malesuada, id hendrerit lectus imperdiet. Maecenas non ultricies ante. Ut tincidunt bibendum dui. Curabitur consequat feugiat scelerisque. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut eleifend arcu.</p>",
+      "photo": "files/m1.jpg"
+    },
+    "36eca269-0bh9-44f8-b98e-477f4bcf878b": {
+      "order": "10",
+      "name": "Guest",
+      "lname": "Guestfield",
+      "position": "A very happy man",
+      "interview": "<p><strong>Lorem ipsum</strong></p>\n<p>Ut a efficitur ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec elementum neque aliquam eros pretium, a venenatis mauris facilisis. Quisque quis ornare nulla, non imperdiet augue. Nullam ac tortor non tortor laoreet varius a at purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ac nulla diam. Vestibulum imperdiet quis mauris a malesuada. Donec viverra urna sed lorem molestie commodo quis sed tellus. Nullam sit amet ipsum feugiat, imperdiet risus sed, vulputate arcu. In vel suscipit nisl. Aenean faucibus semper tellus sed molestie. Nullam vel tempor leo, in vehicula nulla. Mauris dictum nisl posuere sagittis lacinia. Quisque hendrerit turpis eu lorem pretium, vitae egestas enim tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sim massa ultrices dictum. Nulla eget efficitur ipsum, in aliquet orci. Nam bibendum egestas nibh, non semper lorem commodo ut. Duis aliquet purus at tortor malesuada, id hendrerit lectus imperdiet. Maecenas non ultricies ante. Ut tincidunt bibendum dui. Curabitur consequat feugiat scelerisque. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut eleifend arcu.</p>",
+      "photo": "files/m2.jpg"
+    }
+  }
+}

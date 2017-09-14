@@ -1,0 +1,143 @@
+{
+  "order": [
+    "photo",
+    "first_name",
+    "last_name",
+    "order",
+    "email",
+    "position",
+    "bio"
+  ],
+  "reference": "speakers",
+  "title": "Спикеры",
+  "type": "ondemand",
+  "headers": {
+    "photo": {
+      "title": "Фото",
+      "type": "file",
+      "mandatory": false
+    },
+    "first_name": {
+      "title": "Имя",
+      "type": "text",
+      "mandatory": false
+    },
+    "last_name": {
+      "title": "Фамилия",
+      "type": "text",
+      "mandatory": false
+    },
+    "order": {
+      "title": "Порядковый номер",
+      "type": "text",
+      "mandatory": false
+    },
+    "email": {
+      "title": "Почта",
+      "type": "text",
+      "mandatory": false
+    },
+    "position": {
+      "title": "Должность",
+      "type": "text",
+      "mandatory": false
+    },
+    "bio": {
+      "title": "Биография",
+      "type": "html",
+      "mandatory": false
+    }
+  },
+  "relations": [
+    {
+      "table_reference": "agenda",
+      "table_title": "программа",
+      "header_reference": "list_speakers",
+      "header_title": "Спикеры"
+    },
+    {
+      "table_reference": "agenda2",
+      "table_title": "Программа (дополнительная)",
+      "header_reference": "list_speakers",
+      "header_title": "Спикеры"
+    }
+  ],
+  "values": {
+    "b5ed232f-78a7-4155-ba90-1d9848f82c03": {
+      "last_name": "Voronina",
+      "order": "120",
+      "email": "qweszf@ae",
+      "position": "Brand Manager",
+      "first_name": "Elena"
+    },
+
+    "33061fdc-a02b-4510-9f3c-db680efe8348": {
+      "photo": "files/f3.jpg",
+      "first_name": "John",
+      "last_name": "Brown",
+      "order": "10",
+      "email": "jhrb@mail.123",
+      "position": "General Manager"
+    },
+    "d2cbaf54-d6d7-4e9d-9435-d83a4f12f4e3": {
+      "photo": "f1.jpg",
+      "first_name": "Igor",
+      "last_name": "Ivaniv",
+      "order": "20",
+      "email": "toiva@asd.qwe",
+      "position": "Sales Director"
+    },
+    "e0d6b32e-b041-46f9-a2cb-1601c4691937": {
+      "first_name": "Maria",
+      "last_name": "Larina",
+      "order": "30",
+      "email": "maria@asd.ert",
+      "position": "Senior Engineer"
+    },
+
+    "2ebb64e3-c451-4b9d-b38f-0d1829ddd543": {
+      "first_name": "Ivan",
+      "last_name": "Ivanov",
+      "order": "90",
+      "email": "ivaiva@123",
+      "position": "Manager"
+    },
+    "23ab24b5-922c-4f1b-b5ac-4cc9f60af4ad": {
+      "first_name": "Nick",
+      "last_name": "Green",
+      "order": "100",
+      "email": "qwedfg@erw",
+      "position": "Brand Manager"
+    },
+
+    "18776489-aff6-4630-bb3e-d7567217dd71": {
+      "first_name": "Juan",
+      "photo": "m1.jpg",
+      "last_name": "Rodrigues",
+      "order": "111",
+      "email": "qwefg@awe",
+      "position": "Brand manager"
+    },
+    "664422f3-7951-49ad-86c0-6ed2c236c4e2": {
+      "first_name": "Irina",
+      "last_name": "Eremina",
+      "order": "140",
+      "email": "123123@mail.123",
+      "position": "Team Leader"
+    },
+    "1acf99ca-d091-43f7-84b0-aabd24b48850": {
+      "first_name": "Alina",
+      "last_name": "Rosenberg",
+      "order": "101",
+      "email": "123qwe@123",
+      "position": "Team Leader"
+    },
+    "f6d3c1df-5e57-4bd3-ae19-875c6da5c6c9": {
+      "first_name": "Luke",
+      "last_name": "Adisson",
+      "order": "115",
+      "email": "qweasads@ardf",
+      "position": "Senior Brand Manager"
+    }
+  }
+}

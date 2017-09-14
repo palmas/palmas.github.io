@@ -1,0 +1,64 @@
+{
+  "order": [
+    "participant",
+    "date",
+    "time",
+    "flight",
+    "airport",
+    "duration",
+    "notes"
+  ],
+  "reference": "transfers_fromminsk",
+  "title": "Трансферы (из Минска)",
+  "type": "files",
+  "headers": {
+    "participant": {
+      "title": "Участник",
+      "type": "rows",
+      "options": "participants",
+      "mandatory": false
+    },
+    "date": {
+      "title": "Дата",
+      "type": "text",
+      "mandatory": false
+    },
+    "time": {
+      "title": "Время вылета",
+      "type": "text",
+      "mandatory": false
+    },
+    "flight": {
+      "title": "Номер рейса",
+      "type": "text",
+      "mandatory": false
+    },
+    "airport": {
+      "title": "Аэропорт",
+      "type": "text",
+      "mandatory": false
+    },
+    "duration": {
+      "title": "Время полета (прилета)",
+      "type": "text",
+      "mandatory": false
+    },
+    "notes": {
+      "title": "Комментарии",
+      "type": "text",
+      "mandatory": false
+    }
+  },
+  "values": {
+    "cd00822a-b67e-4db2-8dbd-091cfa775a80": {
+      "participant": [
+        "2a3f0f48-f4d0-460f-b701-76f002d42bf2"
+      ],
+      "date": "30 May",
+      "time": "12:30",
+      "flight": "B2 0951",
+      "airport": "Flughafen Wien",
+      "duration": "3:50"
+    }
+  }
+}

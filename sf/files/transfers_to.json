@@ -1,0 +1,72 @@
+{
+  "order": [
+    "tel",
+    "participant",
+    "date",
+    "time",
+    "airport",
+    "station",
+    "flight",
+    "car",
+    "user",
+    "user_email"
+  ],
+  "reference": "transfers_to",
+  "title": "Трансферы туда",
+  "type": "ondemand",
+  "headers": {
+    "tel": {
+      "title": "Контактный телефон",
+      "type": "text",
+      "mandatory": false
+    },
+    "participant": {
+      "title": "Участник",
+      "type": "rows",
+      "options": "participants",
+      "mandatory": false
+    },
+    "date": {
+      "title": "Дата",
+      "type": "text",
+      "mandatory": false
+    },
+    "time": {
+      "title": "Время",
+      "type": "text",
+      "mandatory": false
+    },
+    "airport": {
+      "title": "Аэропорт",
+      "type": "text",
+      "mandatory": false
+    },
+    "station": {
+      "title": "Вокзал",
+      "type": "text",
+      "mandatory": false
+    },
+    "flight": {
+      "title": "Номер рейса/поезда",
+      "type": "text",
+      "mandatory": false
+    },
+    "car": {
+      "title": "Номер вагона",
+      "type": "text",
+      "mandatory": false
+    },
+    "user": {
+      "title": "ФИО участника",
+      "type": "text",
+      "mandatory": true
+    },
+    "user_email": {
+      "title": "Email участника",
+      "type": "text",
+      "mandatory": true
+    }
+  },
+  "values": {
+  }
+}

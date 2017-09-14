@@ -1,0 +1,23 @@
+<loading></loading>
+<md-content class="questions_to_orgs-page">
+    <div ng-show="speaker">
+        <div class="avatar" style="background: url({{(speaker.photo | file : '':'':true)}}) center center no-repeat; background-size: cover;">
+            <span class="mask" ng-show="!speaker.photo">{{speaker.lname.slice(0,1)}}{{speaker.name.slice(0,1)}}</span>
+        </div>
+        <div class="title">
+            <div ng-if="speaker['lname'] && speaker['name']">{{speaker['name']}} {{speaker['lname']}}</div>
+        </div>
+        <div class="question-form">
+            <form name="questionForm" class="feedback-container">
+                <textarea placeholder="Text of the question..." ng-model="question"></textarea>
+            </form>
+            <md-button class="md-raised md-primary ask" ng-click="sendForm(question)" ng-disabled="!question">Ask a question</md-button>
+        </div>
+    </div>
+</md-content>
+<style>
+    .md-button.md-primary.md-raised[disabled] {
+        background-color: #d3d3d3 !important;
+        color: #fff !important;
+    }
+</style>

@@ -1,0 +1,550 @@
+{
+  "order": [
+    "command",
+    "order",
+    "lname",
+    "name",
+    "position",
+    "region",
+    "status",
+    "photo",
+    "email",
+    "mood",
+    "alone",
+    "neighbor1",
+    "neighbor2",
+    "neighbor_final",
+    "travelcard",
+    "gender",
+    "last_authorization_time",
+    "dish"
+  ],
+  "reference": "participants",
+  "title": "Участники",
+  "type": "ondemand",
+  "headers": {
+    "command": {
+      "title": "Команда",
+      "type": "text",
+      "mandatory": false
+    },
+    "order": {
+      "title": "Порядок",
+      "type": "text",
+      "mandatory": false
+    },
+    "lname": {
+      "title": "Фамилия",
+      "type": "text",
+      "mandatory": false
+    },
+    "name": {
+      "title": "Имя",
+      "type": "text",
+      "mandatory": false
+    },
+    "position": {
+      "title": "Должность",
+      "type": "text",
+      "mandatory": false
+    },
+    "region": {
+      "title": "Регион",
+      "type": "text",
+      "mandatory": false
+    },
+    "status": {
+      "title": "Статус",
+      "type": "list",
+      "options": [
+        "участник",
+        "спикер",
+        "организатор",
+        "evp"
+      ],
+      "mandatory": false
+    },
+    "photo": {
+      "title": "Фото",
+      "type": "file",
+      "mandatory": false
+    },
+    "email": {
+      "title": "Email",
+      "type": "text",
+      "mandatory": false
+    },
+    "mood": {
+      "title": "Статус(настроение)",
+      "type": "text",
+      "mandatory": false
+    },
+    "alone": {
+      "title": "Одноместное размещение",
+      "type": "list",
+      "options": [
+        "yes"
+      ],
+      "mandatory": false
+    },
+    "neighbor1": {
+      "title": "Сосед (приоритет1)",
+      "type": "text",
+      "mandatory": false
+    },
+    "neighbor2": {
+      "title": "Сосед (приоритет2)",
+      "type": "text",
+      "mandatory": false
+    },
+    "neighbor_final": {
+      "title": "Сосед",
+      "type": "rows",
+      "options": "participants",
+      "mandatory": false
+    },
+    "travelcard": {
+      "title": "Travel Card",
+      "type": "list",
+      "options": [
+        "скрыть"
+      ],
+      "mandatory": false
+    },
+    "gender": {
+      "title": "Пол",
+      "type": "list",
+      "options": [
+        "м",
+        "ж"
+      ],
+      "mandatory": false
+    },
+    "last_authorization_time": {
+      "title": "Время последнего входа (web-версия)",
+      "type": "text",
+      "mandatory": false
+    },
+    "dish": {
+      "title": "Мое меню",
+      "type": "list",
+      "options": [
+        "Рыба",
+        "Мясо"
+      ],
+      "mandatory": false
+    }
+  },
+  "relations": [
+    {
+      "table_reference": "captains",
+      "table_title": "Капитаны команд",
+      "header_reference": "captain_id",
+      "header_title": "Ссылка на капитана (участники)"
+    },
+    {
+      "table_reference": "participants",
+      "table_title": "Участники",
+      "header_reference": "neighbor_final",
+      "header_title": "Сосед"
+    },
+    {
+      "table_reference": "transfers_from",
+      "table_title": "Трансферы обратно",
+      "header_reference": "participant",
+      "header_title": "Участник"
+    },
+    {
+      "table_reference": "transfers_fromminsk",
+      "table_title": "Трансферы (из Минска)",
+      "header_reference": "participant",
+      "header_title": "Участник"
+    },
+    {
+      "table_reference": "transfers_to",
+      "table_title": "Трансферы туда",
+      "header_reference": "participant",
+      "header_title": "Участник"
+    },
+    {
+      "table_reference": "transfers_tominsk",
+      "table_title": "Трансферы (в Минск)",
+      "header_reference": "participant",
+      "header_title": "Участник"
+    }
+  ],
+  "values": {
+    "786ebb58-ed58-4526-9f91-dcc3a91f17e0": {
+      "photo": "f3.jpg",
+      "command": "10",
+      "lname": "Brown",
+      "name": "Tom",
+      "gender": "0",
+      "dish": "1",
+      "position": "Manager",
+      "region": "Europe",
+      "email": "tom.brown@ourmail.com"
+    },
+    "df75696c-2f46-42ae-b4e2-bea6d55a1738": {
+      "photo": "m3.jpg",
+      "command": "1",
+      "lname": "Dobrin",
+      "name": "Yaroslav",
+      "position": "Senior engineer",
+      "region": "Russia",
+      "email": "rardobr@mail.ru",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "0",
+      "dish": "1"
+    },
+    "6a82fe3e-18a5-4ee5-84a4-f65b94be3300": {
+      "lname": "Roberto",
+      "name": "Sanches",
+      "position": "Junior engineer",
+      "region": "Europe",
+      "email": "toroberto@gmail.com",
+      "gender": "0",
+      "command": "10",
+      "dish": "1",
+      "photo": "f1.jpg"
+    },
+    "6453a655-ac6b-4a98-8bde-fdc5238d528d": {
+      "name": "Diana",
+      "position": "Manager",
+      "region": "Russia",
+      "status": "0",
+      "email": "diana@mail.ru",
+      "gender": "1",
+      "command": "1",
+      "lname": "Matveeva",
+      "photo": "f2.jpg",
+      "dish": "1"
+    },
+    "2a3f0f48-f4d0-460f-b701-76f002d42bf2": {
+      "lname": "Rozhkova",
+      "name": "Svetlana",
+      "position": "Developer",
+      "region": "Europe",
+      "status": "2",
+      "photo": "1601bfe1-880a-4691-b4af-89793ccc7d07.jpg",
+      "email": "rozhkova_sa@mail.ru",
+      "command": "1",
+      "gender": "1",
+      "last_authorization_time": "четверг, 22 июня 2017 г., 14:53:56"
+    },
+    "ee6ceae8-6d1b-4ef5-8da0-50a1f3223db6": {
+      "command": "1",
+      "order": "10",
+      "lname": "Ando",
+      "name": "Aki",
+      "position": "General Manager",
+      "region": "Asia",
+      "status": "0",
+      "photo": "m2.jpg",
+      "email": "qwe@mail.ru",
+      "mood": "Looking forward to seeing you all:))",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "0"
+    },
+    "62eb7e19-9e7d-4b0d-9f54-72482c19fc8f": {
+      "lname": "Smith",
+      "photo": "m1.jpg",
+      "command": "1",
+      "dish": "1",
+      "last_authorization_time": "суббота, 24 июня 2017 г., 19:51:49",
+      "order": "20",
+      "name": "Ann",
+      "position": "Assistant to General Manager",
+      "region": "Europe",
+      "status": "0",
+      "email": "ann@nmail.ru",
+      "mood": "Coming soon 😎🤘🏼",
+      "travelcard": "0",
+      "gender": "1"
+    },
+    "aa149103-a010-4d96-a385-7d3caebecdf4": {
+      "lname": "Potter",
+      "name": "Jessica",
+      "position": "Customer Service Specialist",
+      "region": "Europe",
+      "command": "1",
+      "email": "aeqweqw@qwe.com",
+      "travelcard": "0",
+      "gender": "1"
+    },
+
+    "7b157bb9-8e7c-41a3-8149-df4a7046f36c": {
+      "command": "1",
+      "lname": "Ahmadi",
+      "name": "Leila",
+      "position": "Senior Manager",
+      "region": "Middle East",
+      "email": "ahmleila@kmail.com",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "1"
+    },
+    "8f6ac978-837f-414f-a607-3ac08d350ee1": {
+      "command": "10",
+      "lname": "Krasev",
+      "name": "Igor",
+      "position": "Senior engineer",
+      "region": "Europe",
+      "email": "qweasd@asdkj.com",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "0",
+      "dish": "0",
+      "last_authorization_time": "28 июня 2017 г., 0:30:39 GMT+3"
+    },
+    "cad2f9d8-e8bd-49fd-9f32-18f1615de504": {
+      "command": "1",
+      "lname": "Abae",
+      "name": "Eva",
+      "position": "Junior Trade Marketing Manager",
+      "region": "Middle East",
+      "email": "qwe123@asd.com",
+      "travelcard": "0",
+      "gender": "1",
+      "dish": "0"
+    },
+    "58c0b890-a32d-48f5-bfb3-9615dc7791cd": {
+      "command": "10",
+      "lname": "Gromova",
+      "name": "Darya",
+      "position": "Head of Trade Marketing",
+      "region": "Europe",
+      "status": "0",
+      "email": "were.wer@ewerew.com",
+      "mood": "Keep calm & work hard 😎",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "1",
+      "dish": "0",
+      "last_authorization_time": "‎понедельник‎, ‎26‎ ‎июня‎ ‎2017‎ г.‎ ‎15‎:‎48‎:‎24"
+    },
+    "a21f60d6-2933-488c-991c-5f3a92e4fb95": {
+      "email": "dfgdf.dfgdfg@dfgfd.com",
+      "travelcard": "0",
+      "gender": "1",
+      "command": "1",
+      "lname": "Nikopolidis",
+      "name": "Elena",
+      "position": "Category Manager",
+      "region": "Europe"
+    },
+    "61396a67-1baf-4a9d-bdab-eb2c684b35e4": {
+      "command": "12",
+      "lname": "Anastasiadis",
+      "name": "Maria",
+      "position": "Junior Category Manager",
+      "region": "Europe",
+      "email": "were.wer@werewr.com",
+      "travelcard": "0",
+      "gender": "1"
+    },
+    "dca7a9c9-d81c-4adc-a453-17c4c7c0a62f": {
+      "order": "50",
+      "command": "10",
+      "lname": "Giordano",
+      "name": "Roberto",
+      "position": "Marketing Director",
+      "region": "Europe",
+      "status": "1",
+      "email": "dfgdfg.were@q343qw.com",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "0"
+    },
+
+    "ebe7bfa2-cdce-466d-bd39-7697208a2246": {
+      "command": "11",
+      "lname": "Yankovsky",
+      "name": "Piotr",
+      "position": "Manager",
+      "region": "Europe",
+      "email": "werewer@sdlfk.com",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "0",
+      "dish": "1"
+    },
+    "f9ca8836-d4db-4496-83fa-4e40d42042e6": {
+      "command": "1",
+      "lname": "Green",
+      "name": "Dara",
+      "position": "Marketing",
+      "region": "Europe",
+      "email": "sdfslkjrl@sdfjksdf",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "1",
+      "dish": "0"
+    },
+    "171227af-8740-4045-a407-e27ec809b2bc": {
+      "command": "11",
+      "lname": "Khan",
+      "name": "Rasheeka",
+      "position": "Marketing",
+      "region": "Asia",
+      "email": "asdewlerklj@slfsjdkl.kr",
+      "travelcard": "0",
+      "gender": "1"
+    },
+    "9f4c573b-1806-4172-a99d-6c861ff1e60f": {
+      "lname": "Sezen",
+      "name": "Aksou",
+      "position": "Brand manager",
+      "region": "Asia",
+      "email": "wereweroiue@slkfj.rt",
+      "travelcard": "0",
+      "gender": "1",
+      "command": "11",
+      "dish": "1"
+    },
+    "ff22c8ff-a8e8-4814-bc5b-8e7eb9ce756f": {
+      "command": "1",
+      "lname": "Troshin",
+      "name": "Andrey",
+      "position": "Team Leader",
+      "region": "Europe",
+      "email": "sdfsfsjslk@skdjf.er",
+      "gender": "0",
+      "dish": "0"
+    },
+    "0989ddb2-092a-4163-80d0-76941a7c2865": {
+      "command": "11",
+      "lname": "Mironovich",
+      "name": "Galina",
+      "position": "Analyst",
+      "region": "Europe",
+      "email": "asdfsdf@lskjslf.eoi",
+      "gender": "1",
+      "dish": "0",
+      "last_authorization_time": "среда, 21 июня 2017 г., 15:17:26",
+      "mood": "Drive!!!))"
+    },
+    "0ba9380f-730d-4795-b7d4-b485caa0f660": {
+      "lname": "Romano",
+      "name": "Luca",
+      "position": "Analyst",
+      "region": "Europe",
+      "email": "rwerkjdlgkj@lskfdjl.er",
+      "gender": "0",
+      "command": "11",
+      "dish": "1"
+    },
+    "d76b4fb5-8cca-431d-ace4-38c4d01f6d34": {
+      "command": "1",
+      "lname": "Petrov",
+      "name": "Ivan",
+      "position": "Analyst",
+      "region": "Europe",
+      "email": "sdfsdlksaj@kjslkj.erw",
+      "mood": "Helloooo friends 👍",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "0",
+      "dish": "1"
+    },
+    "54bca566-a882-4499-88c7-c6850e7ad3ff": {
+      "command": "11",
+      "lname": "Dorogov",
+      "name": "Vasily",
+      "position": "Team Leader",
+      "dish": "1",
+      "region": "Europe",
+      "email": "gsoilq@asdie.or",
+      "travelcard": "0",
+      "gender": "0"
+    },
+    "ef693d3f-3ed2-4e2c-a3c6-30b3b8c8dfd5": {
+      "lname": "Kim",
+      "name": "Kaya",
+      "position": "Manager",
+      "region": "Asia",
+      "email": "asduiowug@urei.er",
+      "alone": "0",
+      "travelcard": "0",
+      "gender": "1",
+      "command": "1",
+      "dish": "0"
+    },
+    "faf65c47-68d7-4d9b-9202-63b26c1ba5b9": {
+      "alone": "0",
+      "gender": "0",
+      "lname": "Walker",
+      "name": "Nickolas",
+      "command": "10",
+      "position": "Team leader",
+      "region": "Europe",
+      "email": "qwifoe@fpqwf.eoiu",
+      "dish": "1"
+    },
+    "c44da442-dc5d-4788-a241-7220825d1932": {
+      "command": "12",
+      "lname": "Taylor",
+      "name": "Lana",
+      "position": "Engineer",
+      "region": "Europe",
+      "email": "qwetiopr@wouir.tu",
+      "gender": "1",
+      "last_authorization_time": "‎среда‎, ‎21‎ ‎июня‎ ‎2017‎ г.‎ ‎21‎:‎53‎:‎06",
+      "dish": "0"
+    },
+    "50ee7c52-a18f-4a3d-8c92-aa941c9d0942": {
+      "command": "10",
+      "lname": "Zakharyan",
+      "name": "Olga",
+      "position": "Analyst",
+      "region": "Europe",
+      "email": "eiofwweoir@euri.vo",
+      "gender": "1",
+      "dish": "1"
+    },
+    "917914ad-2345-402b-b2af-006f3e9753cd": {
+      "command": "11",
+      "lname": "Jackson",
+      "name": "Lucia",
+      "position": "Manager",
+      "region": "Europe",
+      "email": "sdfuiwdk@oseipr.tu",
+      "alone": "0",
+      "gender": "1",
+      "dish": "0"
+    },
+    "1e42a6fb-2c5d-496d-94a3-ed3ad7302b86": {
+      "command": "11",
+      "lname": "Baker",
+      "name": "Linda",
+      "position": "Manager",
+      "region": "Europe",
+      "email": "asdll@ieur.tu",
+      "alone": "0",
+      "gender": "1",
+      "dish": "0"
+    },
+    "0071d3c0-bbc0-4786-80d9-f9cceb6e8350": {
+      "lname": "Lal",
+      "name": "Radj",
+      "position": "Engineer",
+      "region": "Asia",
+      "email": "asdswi@jsd.ei",
+      "gender": "0",
+      "command": "10",
+      "dish": "1"
+    },
+    "1bbcf017-7cfe-46fb-9972-b9806068383a": {
+      "command": "11",
+      "lname": "Tavares",
+      "name": "Juan",
+      "position": "Team Leader",
+      "region": "Europe",
+      "email": "erjlke@erewer.we",
+      "gender": "0",
+      "dish": "0"
+    }
+  }
+}

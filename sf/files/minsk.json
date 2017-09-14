@@ -1,0 +1,39 @@
+{
+  "order": [
+    "order",
+    "title",
+    "text"
+  ],
+  "reference": "minsk",
+  "title": "Минск",
+  "type": "files",
+  "headers": {
+    "order": {
+      "title": "Порядок",
+      "type": "text",
+      "mandatory": false
+    },
+    "title": {
+      "title": "Заголовок",
+      "type": "text",
+      "mandatory": false
+    },
+    "text": {
+      "title": "Содержание",
+      "type": "html",
+      "mandatory": false
+    }
+  },
+  "values": {
+    "182218b9-4ade-498b-9403-22edcb4fd16b": {
+      "order": "10",
+      "title": "Republic of Austria",
+      "text": "<p><strong>Capital:</strong> Vienna.</p>\n<p><strong>Official language:</strong> German</p>\n<p><strong>Population:</strong> 8,794,267 (July 2017 estimate)</p>\n<p><strong>Time zone: </strong> CET (UTC+01)Summer (DST) CEST (UTC+02)</p>\n<p><strong>Currency: </strong> Euro (€)</p>"
+    },
+    "5d977b23-b816-4e6a-b81f-aba044d8db27": {
+      "order": "20",
+      "title": "Vienna",
+      "text": "<p><strong>Vienna</strong> is the capital and largest city of Austria and one of the nine states of Austria.</p>\n<p><strong>Population </strong> about 1.8 million (2.6 million within the metropolitan area, nearly one third of Austria's population)</p>\n<p><strong>Transportation:</strong>Vienna has an extensive transportation network with a unified fare system that integrates municipal, regional and railway systems under the umbrella of the Verkehrsverbund Ost-Region (VOR). Public transport is provided by buses, trams and 5 underground metro lines (U-Bahn), most operated by the Wiener Linien. There are also more than 50 S-train stations within the city limits. Suburban trains are operated by the ÖBB. The city forms the hub of the Austrian railway system, with services to all parts of the country and abroad. The railway system connects Vienna with other European cities, like Munich, Venice, Budapest, Prague, Bratislava and Zürich.</p>\n<p><strong>Museums:</strong> A number of museums are located in the Museumsquartier (museum quarter), the former Imperial Stalls which were converted into a museum complex in the 1990s. It houses the Museum of Modern Art, commonly known as the MUMOK (Ludwig Foundation), the Leopold Museum (featuring the largest collection of paintings in the world by Egon Schiele, as well as works by the Vienna Secession, Viennese Modernism and Austrian Expressionism), the AzW (museum of architecture), additional halls with feature exhibitions, and the Tanzquartier. The Liechtenstein Palace contains much of one of the world's largest private art collections, especially strong in the Baroque. Castle Belvedere, built under Prince Eugene, has a gallery containing paintings by Gustav Klimt (The Kiss), Egon Schiele, and other painters of the early 20th century, also sculptures by Franz Xaver Messerschmidt, and changing exhibitions too.</p>"
+    }
+  }
+}

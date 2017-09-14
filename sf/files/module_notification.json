@@ -1,0 +1,184 @@
+{
+  "order": [
+    "comcount",
+    "title",
+    "date_public",
+    "desc",
+    "img",
+    "pdf_file",
+    "pdf_title",
+    "link_more",
+    "link_more_label",
+    "icon_",
+    "org_mark",
+    "unix_time_stamp",
+    "author",
+    "like",
+    "status"
+  ],
+  "reference": "module_notification",
+  "title": "NewsFeed",
+  "type": "ondemand",
+  "headers": {
+    "comcount": {
+      "title": "Количество комментариев",
+      "type": "text",
+      "mandatory": false
+    },
+    "title": {
+      "title": "Заголовок новости",
+      "type": "text",
+      "mandatory": false
+    },
+    "date_public": {
+      "title": "Дата и время публикации",
+      "type": "date",
+      "mandatory": false
+    },
+    "desc": {
+      "title": "Описание новости (полный текст новости)",
+      "type": "html",
+      "mandatory": false
+    },
+    "img": {
+      "title": "Изображение",
+      "type": "file",
+      "mandatory": false
+    },
+    "pdf_file": {
+      "title": "PDF-файл",
+      "type": "file",
+      "mandatory": false
+    },
+    "pdf_title": {
+      "title": "Название PDF-файла",
+      "type": "text",
+      "mandatory": false
+    },
+    "link_more": {
+      "title": "Ссылка «Подробнее» (внешняя ссылка)",
+      "type": "text",
+      "mandatory": false
+    },
+    "link_more_label": {
+      "title": "текст ссылки «Подробнее»",
+      "type": "text",
+      "mandatory": false
+    },
+    "icon_": {
+      "title": "иконка",
+      "type": "file",
+      "mandatory": false
+    },
+    "org_mark": {
+      "title": "новость организатора?",
+      "type": "list",
+      "options": [
+        "да"
+      ],
+      "mandatory": false
+    },
+    "unix_time_stamp": {
+      "title": "unix_time_stamp",
+      "type": "text",
+      "mandatory": false
+    },
+    "author": {
+      "title": "Автор новости",
+      "type": "text",
+      "mandatory": false
+    },
+    "like": {
+      "title": "Лайки",
+      "type": "array",
+      "mandatory": false
+    },
+    "status": {
+      "title": "Статус",
+      "type": "text",
+      "mandatory": false
+    }
+  },
+  "values": {
+    "71240723-aad3-4287-be15-42ff0f003ec0": {
+      "date_public": "1496916000",
+      "org_mark": "0",
+      "title": "Welcome!!!",
+      "comcount": "2",
+      "desc": "<p><strong>Dear colleagues!</strong></p>\n<p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras dictum nisl aliquet elit tincidunt, a tempor neque rutrum. Praesent a mattis diam, id volutpat quam. Cras id sodales magna. </p>\n",
+      "like": [
+        "qwe",
+        "qwe",
+        "qwe",
+        "wer",
+        "dfg",
+        "dfg"
+      ]
+    },
+    "05621294-DC83-47B4-80D7-921D23D07689": {
+      "author": "Ann Smith",
+      "title": "We have cookies",
+      "date_public": "1497625620",
+      "desc": "<p>Duis aliquet purus at tortor malesuada, id hendrerit lectus imperdiet. Maecenas non ultricies ante. Ut tincidunt bibendum dui. Curabitur consequat feugiat scelerisque.</p>",
+      "comcount": "2",
+      "like": [
+        "asd",
+        "sdf",
+        "sdf",
+        "dfg",
+        "sdf"
+      ]
+    },
+    "1497862494061": {},
+    "2ECE9C6A-9E7A-4BE3-93E1-AB82D3A66B8C": {
+      "desc": "<p>Tonight, room 114, 21:00</p><p>'Like' if you come!!!!!</p>",
+      "img": "party.jpg",
+      "date_public": "1497976842",
+      "title": "Secret party for everybody",
+      "author": "Darya Gromova",
+      "like": [
+        "123 ",
+        "asd",
+        "asd",
+        "asd",
+        "asd",
+        "sdf",
+        "sfd",
+        "sdf",
+        "asd",
+        "sdf",
+        "asd",
+        "asd",
+        "asd",
+        "asd",
+        "sdf",
+        "sfd",
+        "sdf",
+        "asd",
+        "asd",
+        "asd",
+        "asd",
+        "asd",
+        "sdf",
+        "sfd",
+        "sdf",
+        "asd"
+      ]
+    },
+
+    "D79E7283-A8DF-40E0-B4D8-9B7402E5CBAC": {
+      "date_public": "1498159185",
+      "org_mark": "0",
+      "title": "Change in the schedule",
+      "desc": "Vivamus iaculis ipsum commodo sapien consequat rhoncus. Nullam et diam a eros fringilla suscipit eget ullamcorper dui. Ut ligula magna, porttitor ac felis sed, dignissim elementum lorem. Aenean arcu erat, rhoncus id augue at, consequat posuere ligula. Mauris ac tempor mi, eget rhoncus metus.",
+      "like": [
+        "asd",
+        "qwe",
+        "wer",
+        "qwe",
+        "wer",
+        "ert"
+      ]
+    }
+  }
+}

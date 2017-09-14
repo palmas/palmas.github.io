@@ -1,0 +1,144 @@
+{
+  "order": [
+    "title",
+    "date",
+    "time",
+    "subtitle",
+    "description",
+    "location",
+    "dresscode",
+    "list_speakers",
+    "icon_title"
+  ],
+  "reference": "agenda2",
+  "title": "Программа (дополнительная)",
+  "type": "files",
+  "headers": {
+    "title": {
+      "title": "Заголовок",
+      "type": "multiline",
+      "mandatory": false
+    },
+    "date": {
+      "title": "Дата",
+      "type": "list",
+      "options": [
+        "26.05.2017",
+        "27.05.2017",
+        "28.05.2017"
+      ],
+      "mandatory": false
+    },
+    "time": {
+      "title": "Время",
+      "type": "text",
+      "mandatory": false
+    },
+    "subtitle": {
+      "title": "Подзаголовок",
+      "type": "multiline",
+      "mandatory": false
+    },
+    "description": {
+      "title": "Описание",
+      "type": "html",
+      "mandatory": false
+    },
+    "location": {
+      "title": "Локация",
+      "type": "text",
+      "mandatory": false
+    },
+    "dresscode": {
+      "title": "Дресс-код",
+      "type": "text",
+      "mandatory": false
+    },
+    "list_speakers": {
+      "title": "Спикеры",
+      "type": "rows",
+      "options": "speakers",
+      "mandatory": false
+    },
+    "icon_title": {
+      "title": "Иконка к заголовку",
+      "type": "file",
+      "mandatory": false
+    }
+  },
+  "values": {
+    "54f8a2ee-3ba3-403d-8c2d-f455d0f283ca": {
+      "title": "Breakfast",
+      "date": "0",
+      "time": "До 11:00",
+      "order":"10"
+    },
+    "4d86c62b-465e-466a-805c-f4782b9b271d": {
+      "title": "Checkout",
+      "date": "0",
+      "time": "12:00"
+    },
+    "e7fe1d5f-c273-47be-843b-6ac769332848": {
+      "title": "Business part",
+      "date": "0",
+      "time": "14:00 – 17:00"
+    },
+    "e1f88347-6e2e-4ef1-950d-56d0be383d2b": {
+      "title": "Dinner",
+      "date": "0",
+      "time": "18:00 – 19:00"
+    },
+    "fbb80a92-dc09-4714-988d-806f9282b836": {
+      "title": "Free time",
+      "date": "0",
+      "time": "20:00"
+    },
+    "c2b63e2a-9d2e-4ac3-a528-4858b108b030": {
+      "title": "Dinner",
+      "date": "1",
+      "time": "До 10:00",
+      "order":"10"
+    },
+    "dcda76ce-1b57-4374-8e09-03ddc2367c0c": {
+      "title": "Free time",
+      "date": "1",
+      "time": "10:00 – 13:00"
+    },
+    "f6fd4b63-69e2-40e9-a9c6-5ef15b90d70f": {
+      "title": "Dinner",
+      "date": "1",
+      "time": "13:00 – 14:00"
+    },
+    "fed19edf-ae02-452c-9758-71fe182b10b8": {
+      "title": "Business games",
+      "date": "1",
+      "time": "14:00 – 18:00"
+    },
+    "e5690ed2-1483-4a92-9983-3308d99b022e": {
+      "title": "Dinner",
+      "date": "1",
+      "time": "18:00 – 19:00"
+    },
+    "b0bb4e78-1ba3-460a-af60-9f27f9e72f47": {
+      "title": "Свободное время",
+      "date": "1",
+      "time": "20:00"
+    },
+    "01ab332d-5720-494f-b9d1-3319425e4451": {
+      "title": "Breakfast",
+      "date": "2",
+      "time": "До 10:00",
+      "order":"10"
+    },
+    "42085ef6-0929-42e1-95d9-bf7cc5501f8a": {
+      "title": "Workout",
+      "date": "2",
+      "time": "10:00 – 12:00"
+    },
+    "9d74a57d-04ca-4a74-85e3-8871e3987fb2": {
+      "title": "Checkout",
+      "date": "2",
+      "time": "12:00"
+    }
+  }
+}

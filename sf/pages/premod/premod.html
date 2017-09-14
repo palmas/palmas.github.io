@@ -1,0 +1,40 @@
+<loading></loading>
+<div layout-padding class="premod-page" ng-if="testmode=='yes'">
+    <div class="speakers" ng-if="!showQuestions">
+        <md-card md-ink-ripple layout-align="center center" class="ripple" ng-click="openSpeaker(speaker)" ng-repeat="speaker in speakers | orderBy:'order' ">
+            <span class="inner">
+                {{speaker.last_name+' '+speaker.first_name}}
+                <span class="push_counter" ng-show="speaker.push_count>0">{{speaker.push_count?speaker.push_count:''}}</span>
+            </span>
+        </md-card>
+    </div>
+
+    <div class="questions" ng-if="showQuestions && !loading">
+        <div ng-if="questions.length<1">В настоящее время нет вопросов для {{currentSpeaker.last_name+' '+currentSpeaker.first_name}}</div>
+        <!--<h3 ng-if="questions.length>1">Вопросы для спикера {{currentSpeaker.last_name+' '+currentSpeaker.first_name}}:</h3>-->
+        <div class="question" ng-repeat="question in questions | orderBy:'-date' ">
+            <div class="date">{{question.date*1000 | date:'dd.MM.yy HH:mm'}}</div>
+<!--            <div class="to">Кому: {{question.speaker_name}}</div>-->
+            <div class="fromWho"><span class="bold">От кого: </span>{{question.author}}</div>
+            <div class="fromWho" ng-if="question.author_email"><span class="bold">Email: </span>{{question.author_email}}</div>
+            <div class="text"><span class="bold">Текст вопроса:</span>{{question.question?question.question:''}}</div>
+            <div class="text">
+                <span class="bold">Премодерация: </span>
+                <span style="color:red;font-weight:bold" ng-if="!question.moderation || question.moderation==0">Не пройдена</span>
+                <span style="color:green; font-weight:bold" ng-if="question.moderation==1">Пройдена</span>
+            </div>
+            <md-button ng-click="premodToggle(question)" class="premod">
+                <span ng-if="!question.moderation || question.moderation==0">Отображать вопрос</span>
+                <span ng-if="question.moderation==1">Не отображать вопрос</span>
+            </md-button>
+        </div>
+    </div>
+
+
+</div>
+
+<style>
+    .pagecontent{
+        min-height:100%;
+    }
+</style>

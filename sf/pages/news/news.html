@@ -1,0 +1,91 @@
+<loading></loading>
+<md-content class="news-page inner-page">
+    <!--<div class="head">NewsFeed</div>-->
+
+    <div class="news-list">
+        <div class="news-list-inner arrow"
+             ng-repeat="(key, newsItem) in newsItems | orderBy: '-date_public'"
+             ng-if="newsItem.date_public && checkVisibility(newsItem.org_mark) && (newsItem.date_public<=unixTimeStamp) && newsItem.status !== 'deleted'">
+            <h3 class="head">
+                <img class="icon_" ng-if="newsItem.icon_" src="{{newsItem.icon_ | file :'file'}}" alt="">
+                {{newsItem.title ? newsItem.title : 'Заголовок новости'}}
+                <div class="delete" ng-click="deleteNews(newsItem.guid)" ng-if="name == newsItem.author"><img src="../img/dustbin.svg" alt=""></div>
+            </h3>
+
+            <div class="card">
+                <div class="author" ng-if="newsItem.author" ng-bind-html="newsItem.author"></div>
+                <div class="time" ng-bind-html="newsItem.date_public_human"></div>
+
+                <div class="desc" ng-if="newsItem.desc" ng-bind-html="newsItem.desc"></div>
+
+                <div id="photo-list" class="photo-list" ng-if="newsItem.img">
+                    <figure style="margin: 0" itemprop="associatedMedia">
+                        <span class="cover">
+                            <img imageonload ng-src="{{newsItem.img | file : 'file'}}" itemprop="thumbnail" style="display: block; width: 100%">
+                        </span>
+                        {{initPhotoSwipeFromDOM('#photo-list')}}
+                    </figure>
+                </div>
+
+                <div class="pdf-area" ng-if="newsItem.pdf_file">
+                    <a href="../{{newsItem.pdf_file}}"><img src="../img/custom/pdf_icon.jpg"></a>
+                    <a class="title" href="../{{newsItem.pdf_title}}"><span ng-bind-html="newsItem.pdf_title"></span></a>
+                </div>
+
+                <div class="link-more-area" ng-if="newsItem.link_more">
+                    <a class="link-more-label"
+                       href="{{newsItem.link_more ? newsItem.link_more : ''}}"
+                       ng-bind-html="newsItem.link_more_label"></a>
+                </div>
+            </div>
+            {{alert('123')}}
+
+            <div class="activities">
+                <div class="like" ng-click="like(newsItem.guid)" ng-class="{'liked': checkLike(newsItem.guid)}"><img src="../img/like.svg" alt=""><span ng-if="newsItem.like && newsItem.like.length > 0">{{ newsItem.like.length }}</span></div>
+<!--                <div class="comment" ng-click="showComments(newsItem.guid,newsItem.ind)">{{newsItem.comcount>0?newsItem.comcount:''}}<img src="../img/comment.svg" alt=""></div>-->
+            </div>
+        </div>
+    </div>
+
+</md-content>
+
+<div class="comments" ng-class="{'show': showCommentsBlock}">
+    <div class="comment-block">
+        <div class="messages" scrollable="loadMoreMessages()">
+            <div ng-repeat="message in messages | limitTo: messageLimit">
+                <p class="author">{{ message.author }}</p>
+                <p class="date">{{ message.date | date : 'dd-MM-yyyy HH:mm' }}</p>
+                <p class="message">{{ message.text }}</p>
+            </div>
+        </div>
+        <div class="send-block">
+            <input placeholder="Введите текст" ng-model="message.text">
+            <div class="send" ng-if="message.text.length > 0" ng-click="sendMessage()"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body{
+        position:relative;
+    }
+
+    .pagecontent {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    newsFeedBlock{
+        display:flex!important;
+    }
+
+    /*    .add-news-item-label{
+            display:block!important;
+        }
+
+        .filter-org-news{
+            display:block!important;
+        }*/
+
+</style>

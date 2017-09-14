@@ -1,0 +1,45 @@
+<md-content  class="main-page" ><!--ng-if="welcome">-->
+  <img class="logo_top" src="../img/design/top_logo.png">
+  <img class="logo_top_ipad" src="../img/design/top_logo_ipad.png">
+  <div class="profile" ui-sref="profile">
+    <div class="icon" style="background: url({{(photo | file) }}) center no-repeat; background-size: cover;">
+        <span class="mask" ng-show="!photo">{{vars.personal_first_name.slice(0,1)+vars.personal_last_name.slice(0,1)}}</span>
+    </div>
+    <div class="title">{{name?name:vars.personal_first_name+' '+vars.personal_last_name}}</div>
+  </div>
+
+  <div class="items">
+    <md-button class="item {{item.id}}"
+               ng-repeat="item in items"
+               ng-class="{noAnimation:!animate}"
+               ng-click="goTo(item.id)" aria-label="."
+               ng-if="item.id!='premod' && item.id!='questions_to_orgs'">
+      <div class="inner">
+        <img src="../pages/{{item.id}}/{{item.id}}.svg">
+        <div class="title" ng-if="item.id!='info'&&item.id!='news'">{{item.title?item.title:''}}</div>
+        <div class="title" ng-if="item.id=='info'">Information</div>
+        <div class="title" ng-if="item.id=='news'">News Feed</div>
+        <div class="push-counter" ng-if="push_count > 0 && item.id == 'notices'">{{(push_count) ? push_count : ''}}</div>
+        <div class="news-counter" ng-if="news_count > 0 && item.id == 'news'">{{(news_count) ? news_count : ''}}</div>
+      </div>
+    </md-button>
+  </div>
+  <img class="logo_bottom" src="../img/design/bottom_logo.png">
+  <img class="logo_bottom_ipad" src="../img/design/bottom_logo_ipad.png">
+</md-content>
+
+<style>
+    main, .pagecontent {
+        height: 100%!important;
+        max-width:100%!important;
+    }
+    md-content {
+      height: 100%;
+    }
+    main.ios {
+        padding-top: 20px;
+    }
+    header,.search_block {
+        display: none;
+    }
+</style>

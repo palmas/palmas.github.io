@@ -1,0 +1,84 @@
+{
+  "order": [
+    "title_pdf",
+    "pdf",
+    "date_public",
+    "title",
+    "description",
+    "icon",
+    "image",
+    "link",
+    "link_label",
+    "users"
+  ],
+  "reference": "notices",
+  "title": "уведомления персональные",
+  "type": "files",
+  "headers": {
+    "title_pdf": {
+      "title": "Название PDF-файла",
+      "type": "text",
+      "mandatory": false
+    },
+    "pdf": {
+      "title": "PDF-файл",
+      "type": "file",
+      "mandatory": false
+    },
+    "date_public": {
+      "title": "Дата и время публикации (с какой даты становится видным)",
+      "type": "date",
+      "mandatory": false
+    },
+    "title": {
+      "title": "Заголовок новости",
+      "type": "text",
+      "mandatory": false
+    },
+    "description": {
+      "title": "Описание новости (полный текст новости)",
+      "type": "html",
+      "mandatory": false
+    },
+    "icon": {
+      "title": "Иконка",
+      "type": "file",
+      "mandatory": false
+    },
+    "image": {
+      "title": "Изображение",
+      "type": "file",
+      "mandatory": false
+    },
+    "link": {
+      "title": "Ссылка «Подробнее» (внешняя ссылка)",
+      "type": "text",
+      "mandatory": false
+    },
+    "link_label": {
+      "title": "Название  ссылки",
+      "type": "text",
+      "mandatory": false
+    },
+    "users": {
+      "title": "Для кого видно (список email)",
+      "type": "array",
+      "mandatory": false
+    }
+  },
+  "values": {
+    "b0838b60-37df-4cfd-ad0c-9af03a2ab966": {
+      "image": "files/m1.jpg",
+      "date_public": "1497614400",
+      "title": "Praesent a mattis diam",
+      "description": "<p>Nam bibendum egestas nibh, non semper lorem commodo ut. Duis aliquet purus at tortor malesuada, id hendrerit lectus imperdiet. Maecenas non ultricies ante. Ut tincidunt bibendum dui. Curabitur consequat feugiat scelerisque. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut eleifend arcu.</p>",
+      "users": []
+    },
+    "3d91b926-fa84-4b4c-a592-fc0b284dc129": {
+      "date_public": "1497623400",
+      "title": "Maecenas ultricies",
+      "description": "<p>Sed tristique diam ut tortor pellentesque, vel sodales mauris efficitur. Proin tempor aliquet massa, quis suscipit urna tristique non. Sed tempus vitae lacus sed maximus. Nam lobortis, est a vestibulum finibus, nisl felis rutrum urna, vel faucibus tellus sem vel ligula. Nulla pretium porta lacus, sit amet iaculis urna faucibus et.</p>",
+      "users": []
+    }
+  }
+}

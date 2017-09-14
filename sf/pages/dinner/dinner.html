@@ -1,0 +1,93 @@
+<!--<loading></loading>-->
+<md-content class="dinner-page" layout-padding ng-class="{fullHeightDinner: !section}">
+<!--    <div class="text" ng-bind-html="text"></div>-->
+    <div class="aboutDinner">
+        <div class="pic">
+            <img src="../img/dinner.jpg" alt="">
+        </div>
+        <div class="text">
+            <p>
+                Ut a efficitur ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec elementum neque aliquam eros pretium, a venenatis mauris facilisis. Quisque quis ornare nulla, non imperdiet augue. Nullam ac tortor non tortor laoreet varius a at purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ac nulla diam. Vestibulum imperdiet quis mauris a malesuada. Donec viverra urna sed lorem molestie commodo quis sed tellus. Nullam sit amet ipsum feugiat, imperdiet risus sed, vulputate arcu. In vel suscipit nisl. Aenean faucibus semper tellus sed molestie. Nullam vel tempor leo, in vehicula nulla. Mauris dictum nisl posuere sagittis lacinia. Quisque hendrerit turpis eu lorem pretium, vitae egestas enim tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            </p>
+            <p>Ut rhoncus at erat nec dapibus. Proin euismod ipsum sit amet lorem pharetra pellentesque. Aliquam et dignissim ipsum. Suspendisse condimentum risus vel justo blandit, id posuere felis blandit. Sed pharetra lorem nec cursus tempus. In facilisis leo in condimentum tempor. Donec sit amet augue quis ante ultricies tincidunt. Aliquam id leo turpis. Aliquam condimentum metus orci, eget mollis arcu faucibus sit amet. Proin commodo mollis lobortis. Nulla nec lectus id risus molestie mollis. Integer eleifend et ipsum malesuada tristique. In facilisis suscipit justo, eget ultricies nibh bibendum sit amet. Aliquam condimentum arcu eu orci finibus, sagittis vehicula tellus finibus. Nullam id molestie metus, vel pulvinar arcu. Aliquam erat volutpat.</p>
+        </div>
+    </div>
+<!--    <div class="items" ng-if="!section">
+        <div class="line ripple" md-ink-ripple ng-click="openSection('dinner_info','Общая информация')">
+            <img src="../img/dinner/info.svg">
+            <div class="title"><span>Общая информация</span></div>
+        </div>
+        <div class="line ripple" md-ink-ripple ng-click="openSection('gala_shema','Схема рассадки')">
+            <img src="../img/dinner/restaurant-table.png">
+            <div class="title"><span>Схема рассадки</span></div>
+        </div>
+        <div class="line ripple" md-ink-ripple ng-click="openSection('dresscode','Дресс-код')">
+            <img src="../img/dinner/dresscode.svg">
+            <div class="title"><span>Дресс-код</span></div>
+        </div>
+        <div class="line ripple" md-ink-ripple ng-click="openSection('slang','Сленг')">
+            <img src="../img/dinner/slang.svg">
+            <div class="title"><span>Сленг</span></div>
+        </div>
+        <div class="line ripple" md-ink-ripple ng-click="openSection('recom','Рекомендуем к просмотру')">
+            <img src="../img/dinner/recom.svg">
+            <div class="title"><span>Рекомендуем к просмотру</span></div>
+        </div>
+    </div>-->
+
+    <div class="section cards" ng-if="section=='dinner_info'">
+        <md-card class="item" ng-repeat="item in items| orderBy:'order'">
+            <div class="title" ng-bind-html="item.title"></div>
+            <div class="text" ng-bind-html="item.text | cutPhone"></div>
+        </md-card>
+    </div>
+    <div class="section cards dresscode" ng-if="section=='dresscode'">
+        <img class="pic" src="../img/pic123.jpg">
+        <div class="welcome">
+            <p>Коллеги, ниже Вы можете ознакомиться со списком магазинов/прокатов, где Вы сможете найти наряд для гала-ужина. </p>
+            <p>Спасибо!</p>
+        </div>
+        <div class="btns">
+            <a class="btnMore md-button md-ink-ripple" href="../files/girls.pdf">Стильные дамы</a>
+            <a class="btnMore md-button md-ink-ripple" href="../files/boys.pdf">Стильные кавалеры</a>
+        </div>
+        <md-card class="item" ng-repeat="item in items| orderBy:'order'">
+            <div class="title" ng-bind-html="item.title"></div>
+            <div class="text" ng-bind-html="item.text | cutPhone"></div>
+        </md-card>
+    </div>
+
+    <div class="section cards" ng-if="section=='gala_shema'">
+        <a href="../files/shema_dinner_new.pdf"><img class="pic" src="../img/dinner/shema_dinner_new.jpg"></a>
+        <a href="../files/shema_dinner_new.pdf"><p class="center">Кликните, чтобы увеличить изображение</p></a>
+
+        <div class="table_buttons">
+            <div cclass="table_block" ng-repeat="(ind, table) in headers.table.options | search:search:items">
+                <md-button ng-click="toggleVisible(table)">Стол {{table ? table : ''}}</md-button>
+
+                <div class="table_list" ng-style="{display: opened_table.indexOf(table) > -1 ? 'block' : 'none'}">
+                    <ol>
+                        <li ng-repeat="(key, person) in items| filter: customFilter(table) | orderBy: 'fio'">{{person.fio}}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section cards" ng-if="section=='slang'">
+        <md-card class="item" ng-repeat="item in items| orderBy:'order'">
+            <div class="title" ng-bind-html="item.title"></div>
+            <div class="text" ng-bind-html="item.text | cutPhone"></div>
+        </md-card>
+    </div>
+
+    <div class="section cards" ng-if="section=='recom'">
+        <md-card class="item" ng-repeat="item in items| orderBy:'order'">
+            <div class="title" ng-bind-html="item.title"></div>
+            <div class="text" ng-bind-html="item.text | cutPhone"></div>
+        </md-card>
+    </div>
+</md-content>
+<style>
+    .search_block { display: flex; }
+</style>

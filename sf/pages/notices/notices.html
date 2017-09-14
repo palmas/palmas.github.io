@@ -1,0 +1,41 @@
+<md-content class="alarms-page inner-page">
+  <div class="alarms" id="alarmsHeads" ng-show="!_alarm">
+    <div  class="alarm arrow"
+          ng-repeat="(key, _alarm) in alarms | orderBy: '-date_public'"
+          ng-if="_alarm.date_public < unixTimeStamp && (_alarm.users.indexOf(CurrUserEmail) != -1 || _alarm.users.length == 0)">
+        <h3 class="head">
+          <img class="icon_" ng-if="_alarm.icon" src="{{_alarm.icon | file :'file'}}" alt="">
+          {{_alarm.title ? _alarm.title : ''}}
+        </h3>
+        <div class="card">
+          <div class="time" ng-bind-html="_alarm.date_public_human"></div>
+
+          <div class="desc" ng-if="_alarm.description" ng-bind-html="_alarm.description"></div>
+
+          <div id="photo-list" class="photo-list" ng-if="_alarm.image">
+            <figure style="margin: 0" itemprop="associatedMedia">
+              <span class="cover">
+                <img imageonload ng-src="{{_alarm.image | file : 'file'}}" itemprop="thumbnail" style="display: block; width: 100%">
+              </span>
+              {{initPhotoSwipeFromDOM('#photo-list')}}
+            </figure>
+          </div>
+
+          <div class="pdf-area" ng-if="_alarm.pdf">
+            <a href="../{{_alarm.pdf}}"><img src="../img/custom/pdf_icon.jpg"></a>
+            <a class="title" href="../{{_alarm.pdf}}"><span ng-bind-html="_alarm.title_pdf"></span></a>
+          </div>
+
+          <div class="link-more-area" ng-if="_alarm.link">
+            <a class="link-more-label"
+               href="{{_alarm.link ? _alarm.link : ''}}"
+               ng-bind-html="_alarm.link_label"></a>
+          </div>
+        </div>
+    </div>
+  </div>
+</md-content>
+
+<style>
+
+</style>

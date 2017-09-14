@@ -1,0 +1,124 @@
+{
+  "order": [
+    "order",
+    "lname",
+    "name",
+    "photo",
+    "position",
+    "tel",
+    "email",
+    "show_email"
+  ],
+  "reference": "orgs",
+  "title": "Контакты организаторов",
+  "type": "files",
+  "headers": {
+    "order": {
+      "title": "Порядок",
+      "type": "text",
+      "mandatory": false
+    },
+    "lname": {
+      "title": "Фамилия",
+      "type": "text",
+      "mandatory": false
+    },
+    "name": {
+      "title": "Имя",
+      "type": "text",
+      "mandatory": false
+    },
+    "photo": {
+      "title": "Фото",
+      "type": "file",
+      "mandatory": false
+    },
+    "position": {
+      "title": "Должность",
+      "type": "text",
+      "mandatory": false
+    },
+    "tel": {
+      "title": "Телефон",
+      "type": "html",
+      "mandatory": false
+    },
+    "email": {
+      "title": "Почта",
+      "type": "text",
+      "mandatory": false
+    },
+    "show_email": {
+      "title": "Отображать почту",
+      "type": "list",
+      "options": [
+        "Да",
+        "Нет"
+      ],
+      "mandatory": true
+    }
+  },
+  "values": {
+    "fb6ce28c-5b79-4fb2-a2ed-15086e9e2296": {
+      "order": "70",
+      "name": "Anna",
+      "tel": "<p><a href=\"tel:+111222333444/?epadvisorIgnoreRequest=true\">+1(112)233-34-44</a></p>",
+      "lname": "Tarasova",
+      "photo": "files/f1.jpg",
+      "position": "General questions",
+      "email": "tyuop@wer.ty"
+    },
+    "3dd76aa2-b8c1-4ef2-bc80-71806ab0a4b2": {
+      "order": "85",
+      "lname": "Daria",
+      "name": "Gromova",
+      "tel": "<p><a title=\"+7(111)222-33-33\" href=\"tel:+71112223333/?epadvisorIgnoreRequest=true\">+7(111)222-33-33</a></p>\n<p>&nbsp;</p>",
+      "photo": "files/f2.jpg",
+      "position": "Transfer",
+      "email": "qwerty@123.ry"
+    },
+    "dcec53ab-c2bf-40c6-ab55-49a43f286659": {
+      "order": "60",
+      "lname": "Prohorova",
+      "name": "Alina ",
+      "photo": "files/f3.jpg",
+      "position": "Accommodation",
+      "tel": "<p><a href=\"tel:+71112223333/?epadvisorIgnoreRequest=true\">+7(111)222-33-33</a></p>",
+      "email": "asdfg@sr.rt"
+    },
+    "717cc0ae-46fd-45ba-aca7-3eeccf7b88ed": {
+      "order": "1000",
+      "lname": "Zaharova",
+      "name": "Ekaterina",
+      "position": "Gala Dinner",
+      "tel": "<p><a href=\"tel:+72223334455/?epadvisorIgnoreRequest=true\">+7(222)333-44-55</a></p>",
+      "photo": "files/m1.jpg",
+      "email": "asdkl@kkl.com"
+    },
+    "e38f664d-8113-4d2c-941b-23fedd57cf86": {
+      "lname": "Egorov",
+      "name": "Maxim",
+      "position": "General questions",
+      "order": "40",
+      "photo": "files/m2.jpg",
+      "email": "asdjk@sdfjk.vom"
+    },
+    "cd1e153e-627e-46a9-8716-59b7b5c9bc89": {
+      "order": "20",
+      "lname": "Rozhkova",
+      "photo": "files/1601bfe1-880a-4691-b4af-89793ccc7d07.jpg",
+      "position": "Mobile App",
+      "tel": "<p><a href=\"tel:+89179991018/?epadvisorIgnoreRequest=true\">+7(917)999-10-18</a></p>",
+      "name": "Svetlana",
+      "email": "rozhkova_sa@mail.ru"
+    },
+    "c4673926-d554-43a5-98bf-13bf2b956d07": {
+      "order": "300",
+      "photo": "files/m3.jpg",
+      "position": "Team building",
+      "lname": "Suraeva",
+      "name": "Inna",
+      "email": "asdjker@asd,ri"
+    }
+  }
+}

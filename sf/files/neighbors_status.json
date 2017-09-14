@@ -1,0 +1,25 @@
+{
+  "order": [
+    "status"
+  ],
+  "reference": "neighbors_status",
+  "title": "Соседи (статус)",
+  "type": "files",
+  "headers": {
+    "status": {
+      "title": "Статус",
+      "type": "list",
+      "options": [
+        "Выбор соседа участниками",
+        "Распределение участников",
+        "Участники распределены"
+      ],
+      "mandatory": false
+    }
+  },
+  "values": {
+    "6fd6a82b-dace-45de-99d9-22a88ae0c2e6": {
+      "status": "0"
+    }
+  }
+}

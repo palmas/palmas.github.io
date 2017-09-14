@@ -1,0 +1,77 @@
+<loading></loading>
+<div class="participants-page" layout-padding ng-if="!loading">
+    <div class="participants" ng-if="!_participant">
+        <div class="wrapper" infinite-scroll="users.nextPage()" infinite-scroll-disabled="users.busy"
+             infinite-scroll-distance="0" infinite-scroll-container="'main'">
+            <md-card ng-cloak  ng-repeat="participant in users.list | search2: search | orderBy:'lname' | orderBy:'order' | limitTo: users.step "
+                     ng-click="openParticipant(participant.id, participant.name,participant.lname)"
+                     ng-hide="(participant.status && participant.status>2) || (mode && mode != 0 && mode != 'captain' && (participant.id == my_id || participant.alone == 0 || participant.id == choosenId || participant.gender != gender))"
+                     ng-attr-id="{{ 'user-' + participant.id }}">
+                <!-- ng-hide="(participant.status && participant.status>3) || (mode>0 && (participant.id==my_id || participant.alone==0 || participant.id==choosenId)) || participant.gender!=gender" -->
+<!--                <div class="photo" style="background: url('https://moscow.eventplatform.ru/remote/api/file?eventGuid=vdp3ceuz&key={{web_key}}&file={{participant.photo}}') center center no-repeat; background-size: cover;">-->
+                <div class="photo" style="background: url({{participant.photo | file}}) center center no-repeat; background-size: cover;">
+                    <span class="mask" ng-show="!participant.photo">{{participant.name.slice(0,1)+''+participant.lname.slice(0,1)}}</span>
+                </div>
+                <div class="info">
+                    <div class="fio">{{participant.name+ ' '+participant.lname}}</div>
+                    <div class="item position" ng-if="participant.position">
+                        <img src="../img/participants/position.svg">
+                        <div class="text">{{participant.position?participant.position:''}}</div>
+                    </div>
+                    <div class="item region" ng-if="participant.region">
+                        <img src="../img/participants/region.svg">
+                        <div class="text">{{participant.region?participant.region:''}}</div>
+                    </div>
+                    <div class="item mood" ng-if="participant.mood">
+                        <img src="../img/participants/mood.svg">
+                        <div class="text status">{{participant.mood?participant.mood:''}}</div>
+                    </div>
+                </div>
+            </md-card>
+        </div>
+    </div>
+    <div class="participants_info" ng-show="_participant" >
+        <div class="avaname">
+<!--            <div class="photo" style="background: url('https://moscow.eventplatform.ru/remote/api/file?eventGuid=vdp3ceuz&key={{web_key}}&file={{_participant.photo}}') center center no-repeat; background-size: cover;">-->
+            <div class="photo" style="background: url({{_participant.photo | file}}) center center no-repeat; background-size: cover;">
+                <span class="mask" ng-show="!_participant.photo">{{_participant.name.slice(0,1)+''+_participant.lname.slice(0,1)}}</span>
+            </div>
+            <div class="fio">
+                {{_participant.name+ ' '+_participant.lname}}
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="item position" ng-if="_participant.position">
+                <img src="../img/participants/position.svg">
+                <div class="text">{{_participant.position?_participant.position:''}}</div>
+            </div>
+            <div class="item region" ng-if="_participant.region">
+                <img src="../img/participants/region.svg">
+                <div class="text">{{_participant.region?_participant.region:''}}</div>
+            </div>
+            <div  class="item email" ng-if="_participant.email">
+                <img src="../img/participants/email.svg">
+                <a href="mailto:{{_participant.email}}" class="text">{{_participant.email?_participant.email:''}}</a>
+            </div>
+            <div class="item tel" ng-if="_participant.tel">
+                <img src="../img/participants/tel.svg">
+                <a href="tel:{{_participant.tel+'/?epadvisorIgnoreRequest=true' | cutPhone}}" class="text">{{_participant.tel?_participant.tel:''}}</a>
+            </div>
+            <div class="item mood" ng-if="_participant.mood">
+                <img src="../img/participants/mood.svg">
+                <div class="text">{{_participant.mood?_participant.mood:''}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .search_block { display: flex; }
+    .pagecontent{
+        min-height:100%!important;
+    }
+    #main{
+        background: transparent;
+    }
+</style>

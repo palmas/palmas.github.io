@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+  <html ng-app="app">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta name="format-detection" content="telephone=yes">
+      <title>STEP FORWARD</title>
+      <link rel="stylesheet" href="../css/lib.css">
+      <link rel="stylesheet" href="../css/main.css">
+      <link rel="stylesheet" href="../vendor/jquery.fancybox.css">
+    </head>
+
+  <body ng-controller="globalCtrl" hello>
+    <header id="header" ui-view="viewTopMenu" ng-cloak>
+      <div class="header-inner">
+        <div  class="header-items">
+          <div class="left-items">
+            <div class="icon left-menu-icon" ng-click="$root.navDrawer.toggle()" aria-label="."></div>
+            <span ng-cloak class="title">{{header.title}}</span>
+          </div>
+          <div class="right-items">
+<!--            <div ng-cloak ng-show="testmode=='yes'&& header.moderation" class="icon moderation-icon" ui-sref="premod"></div>-->
+            <div ng-cloak ng-show="agenda2=='yes'&& header.agenda2" class="icon agenda2-icon" ng-click="showAgenda2()"></div>
+            <md-button ng-show="header.search" class="icon search-icon" ng-click="header.activeSeach = !header.activeSeach" aria-label="."></md-button>
+            <div ng-show="header.back" class="icon back-icon" ng-click="animateTimeout(header.back)" aria-label="."></div>
+            <md-button ng-show="header.edit" class="icon edit-icon" ng-click="header.edit()" aria-label="."></md-button>
+            <md-button ng-show="header.done" class="icon done-icon" ng-click="header.done()" aria-label="."></md-button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <newsFeedBlock ng-show="!showCommentsBlock" >
+      <div md-ink-ripple class="add-news-item-label ripple" ng-click="showAdvanced($event)" >+ Post recent news</div>
+        <md-checkbox class="checkbox-filter-org"
+                     ng-model="$root.filterOrg"
+                     aria-label="Показать новости от организаторов"><span class="label_">Show news from organizers only</span>
+        </md-checkbox>
+    </newsFeedBlock>
+    <div class="search_block" ng-if="header.simpleSearch">
+      <input placeholder="Search..." type="text" ng-model="$root.search">
+      <div class="clear_input" ng-show="$root.search.length > 2" ng-click="$root.search = ''">X</div>
+    </div>
+
+    <main id="main">
+      <div class="pagecontent" ui-view="viewBody" ng-cloak>
+      </div>
+    </main>
+
+    <nav id="nav" ng-controller="menuCtrl" ng-hide="header.hide">
+      <div class="content">
+        <div class="logo" ui-sref="main" ng-click="close()">
+          <!-- логотип мероприятия, путь до файла редактировать в colors.scss -->
+        </div>
+        <ul>
+          <li md-ink-ripple ng-repeat="item in items | filter: {visible: true}"
+              ng-show="item.title"
+              ng-click="goToPage(item.id);close()"
+              class="ripple">
+            <img ng-src="../pages/{{item.id}}/{{item.id}}.svg" alt="">
+            <span>{{item.title}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="shadow"></div>
+    </nav>
+
+    <div ng-click="scrollTop()" class="scroll-to-app-button" scrolltop ng-class="{show:scrolled}"></div>
+  </body>
+
+  <script type="text/javascript" src="../vendor/jquery.js"></script>
+  <script type="text/javascript" src="../vendor/jquery.fancybox.js"></script>
+  <script type="text/javascript" src="../vendor/signalR.js"></script>
+  <script type="text/javascript" src="../js/lib.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="../vendor/nginfinitescroll.min.js"></script>
+<!--  <script type="text/javascript" src="../vendor/jquery.nicescroll.js"></script>-->
+<!--    <script>
+      $(document).ready(
+              function() {
+                $("#main").niceScroll({cursorcolor:"#ed1d24",cursoropacitymin:"0.2"});
+              } );
+    </script>-->
+</html>

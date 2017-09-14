@@ -1,0 +1,261 @@
+<loading></loading>
+<div class="info-page" ng-if="!loading" ng-class="{fullHeight: !section}">
+<!--    <md-card style="padding:10px;"><b>Уважаемые участники!</b> <br> При заселении в отель, не забудьте получить конференц-пакет у организаторов в холле первого этажа.</md-card>-->
+<!--    <div class="line">
+        <img src="">
+        <div class="title">Погода</div>
+    </div>-->
+    <div class="items" ng-if="!section" >
+        <div class="line weather-line-inner" ng-click="updateWeather()" ng-cloak ng-show="icon && temp && info && wind">
+            <img class="icon_" src="{{icon ? icon : ''}}">
+            <div class="description">
+                <span class="temp">{{temp ? temp : ''}}</span> {{info ? info : ''}}<br>
+                wind - {{wind ? wind : ''}} m/s
+            </div>
+        </div>
+        <div class="line ripple" md-ink-ripple ng-click="openSection('minsk','About the country')">
+            <img src="../img/info/country.png">
+            <div class="title"><span>Information about the country</span></div>
+        </div>
+        <div class="line ripple" md-ink-ripple ng-click="openSection('info','General information')">
+            <img src="../img/info/info.svg">
+            <div class="title"><span>General information</span></div>
+        </div>
+        <div class="line ripple" md-ink-ripple ng-click="openSection('orgs','Organizers')">
+            <img src="../img/info/smartphone.svg">
+            <div class="title"><span>Contacts of the organizers</span></div>
+        </div>
+        <!--ng-if="vars.personal_last_name=='Петченко' || vars.personal_last_name=='Рожкова'"-->
+<!--        <div class="line ripple" md-ink-ripple ng-click="openSection('business_scheme','Seating chart')">
+            <img src="../img/info/scheme.png">
+            <div class="title"><span>Business section: seating chart</span></div>
+        </div>-->
+<!--        <div class="line ripple" md-ink-ripple ng-click="openSection('hotel','Grand Hotel')">
+            <img src="../img/info/hotel.svg">
+            <div class="title"><span>Accommodation: Grand Hotel</span></div>
+        </div>-->
+<!--        <div class="line ripple" md-ink-ripple ng-click="openSection('viktoria_hotel','SWD Training')">
+            <img src="../img/info/hotel.svg">
+            <div class="title"><span>SWD Training</span></div>
+        </div>-->
+<!--        <div class="line ripple" md-ink-ripple ng-click="openSection('freetime','Free time')">
+            <img src="../img/info/freetime.svg">
+            <div class="title"><span>Free time</span></div>
+        </div>-->
+        <div class="line ripple" md-ink-ripple ng-click="openSection('guests','Guests of the Conference')">
+            <img src="../img/info/guests.png">
+            <div class="title"><span>Guests of the Conference</span></div>
+        </div>
+<!--        <a class="line ripple" md-ink-ripple href="../files/region.pdf">
+            <img src="../img/info/region.svg">
+            <div class="title"><span>Занимательное регионоведение</span></div>
+        </a>-->
+    </div>
+
+    <div class="section orgs" ng-if="section=='orgs'">
+        <div class="welcome">
+            <p>Dear colleagues, in case of emergency questions you can contact the organizers of the event.</p>
+            <p>Contacts and responsibilities of each organizer you can find below.</p>
+            <p>Thank you!</p>
+        </div>
+        <md-card class="org" ng-repeat="item in items| orderBy:'order'">
+            <!-- <div class="photo" style="background: url('https://moscow.eventplatform.ru/remote/api/file?eventGuid=vdp3ceuz&key={{web_key}}&file={{item.photo}}') center center no-repeat; background-size: cover;">-->
+            <div class="photo" style="background: url({{item.photo | file}}) center center no-repeat; background-size: cover;">
+                <span class="mask" ng-show="!item.photo">{{item.name.slice(0,1)+''+item.lname.slice(0,1)}}</span>
+            </div>
+            <div class="info">
+                <div class="name">{{item.name+' '+item.lname}}</div>
+            </div>
+            <div class="position" ng-if="item.position">
+                <img src="../img/info/position.svg">
+                {{item.position?item.position:''}}
+            </div>
+
+            <div class="phone" ng-if="item.tel">
+                <img src="../img/info/smartphone.svg">
+                <div class="tel" ng-bind-html="item.tel | cutPhone"></div>
+            </div>
+
+            <div class="phone" ng-if="item.email && item.show_email && item.show_email == 0">
+                <img src="../img/participants/email.svg">
+                <a class="tel" ng-href="mailto:{{item.email}}">{{item.email?item.email:''}}</a>
+            </div>
+            <p><md-button ng-click="openOrg(item.id)">Ask a question</md-button></p>
+        </md-card>
+    </div>
+    <div class="section hotel" ng-if="section=='hotel'">
+        <div class="item" ng-repeat="item in items| orderBy:'order'">
+            <div class="title" ng-if="item.title" ng-bind-html="item.title"></div>
+            <img class="pic" src="{{item.pic | file}}">
+            <div class="btns">
+                <md-button class="btnMore" ng-click="openSection('hotel_photos','Фото отеля')">Больше фото</md-button>
+                <md-button class="btnMore" ng-click="openSection('hotel_halls','Схема первого этажа')">Схема первого этажа</md-button>
+            </div>
+            <div class="text" ng-if="item.text" ng-bind-html="item.text | cutPhone"></div>
+        </div>
+    </div>
+    <div class="section hotel" ng-if="section=='viktoria_hotel'">
+        <div class="item" ng-repeat="item in items| orderBy:'order'">
+            <div class="title" ng-if="item.title" ng-bind-html="item.title"></div>
+            <img class="pic" ng-if="item.title" src="{{item.pic | file}}">
+
+<!--            <a class="pic" ng-if="!item.title" href="{{item.pic | file}}" data-fancybox="gallery" style="background: url({{(item.pic | file) }}) center no-repeat; background-size: cover;">
+            </a>-->
+            <div class="text" ng-if="item.text"  ng-bind-html="item.text | cutPhone"></div>
+            <div class="maps">
+                <div class="map">
+                    <b>Есть интернет</b><br>
+                    <a href="{{item.location_link}}">Схема проезда</a>
+                </div>
+                <div class="map">
+                    <b>Нет интернета</b><br>
+                    <a href="{{item.location_pic | file}}" data-fancybox="gallery">Схема проезда</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section cards" ng-if="section=='minsk'">
+        <md-card class="item" ng-repeat="item in items| orderBy:'order'">
+            <div class="title" ng-bind-html="item.title"></div>
+            <div class="text" ng-bind-html="item.text | cutPhone"></div>
+        </md-card>
+    </div>
+    <div class="section cards" ng-if="section=='info'">
+        <md-card class="item" ng-repeat="item in items| orderBy:'order'">
+            <div class="title" ng-bind-html="item.title"></div>
+            <div class="text" ng-bind-html="item.text | cutPhone"></div>
+        </md-card>
+    </div>
+    <div class="section freetime more" ng-if="section=='freetime'">
+
+        <div class="welcome">
+            <p>Приглашаем всех желающих поиграть в футбол на футбольное поле ФК Минск 28 июня с 20:00 до 22:00.</p>
+            <p>Поле находится в 5 мин. ходьбы от отеля Марриотт.</p>
+        </div>
+
+        <div class="item">
+            <a href="../img/sheme.png" data-fancybox="gallery" style="background: url('../img/sheme.png') center no-repeat; background-size: cover;">
+            </a>
+        </div>
+
+        <div class="welcome">
+            <p>При себе иметь спортивную обувь и хорошее настроение.</p>
+        </div>
+
+        <form class="form" name="freetime_form">
+            <div class="item">
+                <md-input-container class="inp">
+                    <label>Имя и Фамилия</label>
+                    <input required name="name" ng-model="name">
+                </md-input-container>
+            </div>
+            <div class="item">
+                <md-input-container class="inp">
+                    <label>Почта</label>
+                    <input required name="email" ng-model="email" ng-pattern="/^.+@.+\..+$/">
+                    <div ng-show="freetime_form.email.$error.pattern == true" ng-messages="freetime_form.email.$error">
+                        <div ng-message="pattern">Пожалуйста, введите корректный email</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div class="item">
+                <md-input-container class="inp">
+                    <label>Контактный телефон</label>
+                    <input required name="phone" mask="+999999999999" ng-model="phone" ng-pattern="/^\+\d{11,12}$/">
+                    <div ng-show="freetime_form.phone.$error.pattern == true" ng-messages="freetime_form.phone.$error">
+                        <div ng-message="pattern">Пожалуйста, введите корректный номер телефона</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <md-button class="md-raised md-primary ask" ng-disabled="!name || !email || !phone"
+                       class="btnSendTravelCard"
+                       ng-click="sendFreetime({'name':name,'email':email, 'phone': phone});name='';email='';phone=''">
+                Записаться
+            </md-button>
+        </form>
+
+
+
+    </div>
+    <div class="section more" ng-if="section=='hotel_photos'">
+        <div class="item" ng-repeat="item in items| orderBy:'order'">
+            <a href="{{item.pic | file}}" data-fancybox="gallery" style="background: url({{(item.pic | file) }}) center no-repeat; background-size: cover;">
+            </a>
+        </div>
+    </div>
+    <div class="section more halls" ng-if="section=='hotel_halls'">
+        <div class="item" ng-repeat="item in items| orderBy:'order'">
+            <a href="{{item.pic | file}}" data-fancybox="gallery" style="background: url({{(item.pic | file) }}) center no-repeat; background-size: cover;">
+            </a>
+        </div>
+    </div>
+    <div class="section orgs guests" ng-if="section=='guests'">
+        <div class="guestsList" ng-if="!currentGuest">
+            <md-card class="org"
+                     ng-repeat="item in items| orderBy:'order'"
+                     ng-click="showGuest(item)"
+            >
+                <div class="photo" style="background: url({{item.photo | file}}) center center no-repeat; background-size: cover;">
+                    <span class="mask" ng-show="!item.photo">{{item.name.slice(0,1)+''+item.lname.slice(0,1)}}</span>
+                </div>
+                <div class="info">
+                    <div class="name">{{item.name+' '+item.lname}}</div>
+                </div>
+                <div class="position" ng-if="item.position">
+                    <img src="../img/info/position.svg">
+                    {{item.position?item.position:''}}
+                </div>
+            </md-card>
+        </div>
+        <div class="guestInfo" ng-if="currentGuest">
+            <div class="guestPhoto" style="background: url({{currentGuest.photo | file}}) center center no-repeat; background-size: cover;">
+                <span class="mask" ng-show="!currentGuest.photo">{{currentGuest.name.slice(0,1)+''+currentGuest.lname.slice(0,1)}}</span>
+            </div>
+            <div class="guestName">{{currentGuest.name+' '+currentGuest.lname}}</div>
+            <div class="guestPosition" ng-bind-html="currentGuest.position"></div>
+            <div class="guestInterview" ng-bind-html="currentGuest.interview"></div>
+        </div>
+    </div>
+    <div class="section business_scheme" ng-if="section=='business_scheme'">
+        <a href="../files/rassadkabusiness.pdf"><img class="pic" src="../img/info/rassadkabusiness.jpg"></a>
+        <a href="../files/rassadkabusiness.pdf"><p style="text-align:center;">Кликните, чтобы увеличить изображение</p></a>
+        <md-button class="btnSector" ng-click="curSector=1" ng-class="{'active':curSector==1}">Левый сектор</md-button>
+        <md-button class="btnSector" ng-click="curSector=0" ng-class="{'active':curSector==0}">Правый сектор</md-button>
+        <div class="table_buttons" ng-if="curSector>=0">
+            <div class="table_block"
+                 ng-repeat="(ind, table) in headers.table.options | search3:search:items"
+                 ng-if="table<10"
+                 >
+                <md-button ng-click="toggleVisible(table)">Ряд {{table ? table : ''}}</md-button>
+
+                <div class="table_list" ng-style="{display: opened_table.indexOf(table) > -1 ? 'block' : 'none'}">
+                    <ol>
+                        <li  ng-repeat="(key, person) in items| filter: customFilter(table) | orderBy: 'seat'"
+                        ng-if="person.sector==curSector">
+                            {{person.seat+' место - '+person.fio}}
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .pagecontent{
+        height:100%;
+    }
+
+     .md-button.md-primary.md-raised[disabled] {
+         background-color: #d3d3d3 !important;
+         color: #fff !important;
+     }
+    md-input-container.md-input-invalid label {
+        color: rgba(0,0,0,0.38);
+    }
+
+    md-input-container.md-input-invalid .md-input {
+        border-color: rgba(0,0,0,0.12);
+    }
+    .search_block { display: flex; }
+</style>

@@ -1,0 +1,45 @@
+<loading></loading>
+<md-content class="speakers-page">
+    <div class="speakers" ng-if="!info">
+        <md-card class="speaker"
+                 ng-click="openSpeaker(speaker)"
+                 ng-repeat="speaker in speakers | speakers_search: search | orderBy:'order' ">
+            <div class="photo" style="background: url({{speaker.photo | file}}) center center no-repeat; background-size: cover;">
+                <span class="mask" ng-show="!speaker.photo">{{speaker.first_name.slice(0,1)+''+speaker.last_name.slice(0,1)}}</span>
+            </div>
+            <div class="info">
+                <div class="name">{{speaker.first_name+' '+speaker.last_name}}</div>
+                <div class="position" ng-if="speaker.position">
+                    <img src="../img/info/position.svg">
+                    {{speaker.position?speaker.position:''}}
+                </div>
+            </div>
+        </md-card>
+    </div>
+
+    <div class="speaker_info" ng-if="info">
+        <div class="avaname">
+            <div style="background: url({{info.photo | file}}) center center no-repeat; background-size: cover;"  class="photo">
+                <span class="mask" ng-show="!info.photo">{{info.first_name.slice(0,1)+''+info.last_name.slice(0,1)}}</span>
+            </div>
+            <div class="name">{{info.first_name+' '+info.last_name}}</div>
+            <div class="position" ng-if="info.position">
+                <img src="../img/info/position.svg">
+                {{info.position?info.position:''}}
+            </div>
+        </div>
+        <div class="question">
+            <div class="title">Ask a question</div>
+            <textarea ng-model="$root.question" type="text" placeholder="Text of the question..."></textarea>
+            <md-button ng-click="sendQuestion(question)" class="sendQuestion" ng-disabled="!question">Send</md-button>
+        </div>
+        <div class="bio" ng-if="info.bio">
+            <div class="text" ng-bind-html="info.bio"></div>
+        </div>
+    </div>
+
+</md-content>
+
+<style>
+    .search_block { display: flex; }
+</style>

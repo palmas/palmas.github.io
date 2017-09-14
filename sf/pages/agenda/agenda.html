@@ -1,0 +1,53 @@
+<loading></loading>
+<md-content class="page-agenda-simply inner-page" ng-swipe-left="swipe($event,'right')" ng-swipe-right="swipe($event, 'left')">
+    <md-tabs md-border-bottom md-selected="tab">
+        <md-tab ng-repeat="(id, day) in headers.date.options" label="{{day ? day : ''}}" md-on-select="currentTab(id)">
+            <md-content style="overflow-y:hidden ;padding: 0 16px" ng-repeat="(key, event) in events | filter:{ date: id } | orderBy: 'time' | orderBy: 'order' ">
+                <timeline>
+                    <timeline-event side="right" >
+                        <timeline-badge style="background: #ed1d24">
+                            <i class="glyphicon" ></i>
+                        </timeline-badge>
+                        <timeline-panel>
+                            <div class="time">{{event.time?event.time:''}}</div>
+
+                            <div class="col-item col-title" ng-if="event.title" ng-class="{'marBottom20': !event.subtitle && !event.description}">
+                                <div class="icon title_icon" ng-if="event.icon_title" style="background: url('{{event.icon_title | file}}') left 4px no-repeat; background-size: contain;"></div>
+                                <div class="text title_text {{event.icon_title ? '' : 'padding-left-none'}}" ng-bind-html="event.title" ></div>
+                            </div>
+
+                            <div class="col-item col-subtitle"  ng-class="{'marBottom20': !event.description}" ng-if="event.subtitle">
+                                <div class="text subtitle_text padding-left-none" ng-bind-html="event.subtitle" ></div>
+                            </div>
+
+                            <div class="col-item col-description marBottom20" ng-if="event.description">
+                                <div class="text description_text padding-left-none"  data-ng-bind-html="trustAsHtml(event.description)"></div>
+                            </div>
+
+                            <div class="col-item col-participant" ng-if="event.list_speakers && speakers.hasOwnProperty(ind)"ng-repeat="ind in event.list_speakers"  ng-click="openSpeaker(ind)"  ng-attr-id="{{'user-' + ind + '_' + event.guid}}">
+                                <div class="icon participant_icon" style="background: url('../img/tribune.svg') left top no-repeat; background-size: contain;"></div>
+                                <div class="text participant_text" ng-bind-html="speakers[ind]['first_name']+' '+speakers[ind]['last_name']"></div>
+                            </div>
+
+                            <div class="col-item col-dresscode marBottom20" ng-if="event.dresscode">
+                                <div class="icon dresscode_icon" style="background: url('../img/hanger.svg') left top no-repeat; background-size: contain;"></div>
+                                <div class="text dresscode_text" ng-bind-html="event.dresscode" ></div>
+                            </div>
+
+                            <div class="col-item col-place marBottom20" ng-if="event.location">
+                                <div class="icon place_icon" style="background: url('../img/icon_place.svg') left top no-repeat; background-size: contain;"></div>
+                                <div class="text place_text" ng-bind-html="event.location"></div>
+                            </div>
+
+                        </timeline-panel>
+                    </timeline-event>
+                </timeline>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+</md-content>
+<style>
+    .ios md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+        min-height: calc(100vh - 77px);
+    }
+</style>

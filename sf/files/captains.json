@@ -1,0 +1,37 @@
+{
+  "order": [
+    "number",
+    "captain",
+    "captain_id"
+  ],
+  "reference": "captains",
+  "title": "Капитаны команд",
+  "type": "files",
+  "headers": {
+    "number": {
+      "title": "Номер команды",
+      "type": "text",
+      "mandatory": false
+    },
+    "captain": {
+      "title": "Капитан",
+      "type": "text",
+      "mandatory": false
+    },
+    "captain_id": {
+      "title": "Ссылка на капитана (участники)",
+      "type": "rows",
+      "options": "participants",
+      "mandatory": false
+    }
+  },
+  "values": {
+    "c9a9c46d-8fa7-4e1f-8e8f-68b9080c0287": {
+      "number": "1",
+      "captain": "Igor Krasev",
+      "captain_id": [
+        "8f6ac978-837f-414f-a607-3ac08d350ee1"
+      ]
+    }
+  }
+}

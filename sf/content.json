@@ -1,0 +1,7 @@
+{
+	"event_content_orientation":{
+		"phone":{"landscape":false,"portrait":true},
+		"tablet":{"landscape":true,"portrait":true}
+	},
+	"event_update_interval": 10
+}
